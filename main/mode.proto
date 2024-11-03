@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mode;
+
+message ModeUsageRequest {
+    string area_code = 1;
+}
+
+message ModeUsageResponse {
+    map<string, int32> mode_count = 1;
+}
+
+service ModeUsageService {
+    rpc GetModeUsage(ModeUsageRequest) returns (ModeUsageResponse);
+}

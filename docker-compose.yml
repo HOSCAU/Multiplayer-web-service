@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Make sure the Dockerfile name matches
+    ports:
+      - "8080:8080"  # Change as necessary for your application
+    depends_on:
+      - mongo  # If you're using a MongoDB service
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
